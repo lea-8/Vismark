@@ -1,18 +1,20 @@
 import { mdsvex } from 'mdsvex';
-// import sveltePreprocess from 'svelte-preprocess';
+import remarkFootnotes from 'remark-footnotes';
 
 /**
  * A helper to set up mdsvex + Svelte preprocessing.
  * Optionally takes mdsvex options.
  */
-export function vismarkMdsvex(baseConfig = {}, mdsvexOptions = {}) {
+export function vismarkConfig(baseConfig = {}, mdsvexOptions = {}) {
   return {
     ...baseConfig,
     extensions: ['.svelte','.vismd'],
     preprocess: [
       mdsvex({
-        extensions: ['.vismd'], 
-        ...mdsvexOptions })
+        extensions: ['.vismd'],
+        remarkPlugins: [remarkFootnotes],
+        ...mdsvexOptions 
+      })
     ],
     // ...baseConfig,
   };
