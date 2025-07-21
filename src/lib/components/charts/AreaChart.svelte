@@ -25,14 +25,14 @@
     plotArea(data, xData, yData, titleData);
   });
 
-  function plotArea(dataset, xVar, yVar, title) {
+  function plotArea(dataset, xVar, yVar, titleVar) {
     let plotGraph = Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
       // marginBottom: 30,
       // marginLeft: 40,
       color: {legend: true},
-      title: title,
+      title: titleVar,
       // caption: "[ CAPTION ]",
       y: {
         grid: true,

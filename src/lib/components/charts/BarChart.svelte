@@ -25,13 +25,13 @@
     plotBar(data, xData, yData, titleData);
   });
 
-  function plotBar(dataset, xVar, yVar, title) {
+  function plotBar(dataset, xVar, yVar, titleVar) {
     let plotGraph =  Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
       // marginBottom: 30,
       // marginLeft: 40,
-      title: title,
+      title: titleVar,
       // caption: "[ CAPTION ]",
       x: {padding: 0.4},
       y: {grid: true},
