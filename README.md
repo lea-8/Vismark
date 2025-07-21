@@ -22,15 +22,30 @@ const config = vismarkConfig({
 ```
 
 ## Usage
+Vismark allows you to write webpages in extended Markdown syntax. In order to do this, you can write up your wepage in a file using the `.vismd` extension.
+
+These pages then need to be added to a `+page.svelte` as a regular Svelte component. This means if I write a page called `AboutMe.vismd`, then I can make sure it is actually reflected in the codebase by adding the following to the `+page.svelte`:
+
+``` html
+<script>
+  import AboutMe from './AboutMe.vismd'
+</script>
+
+<AboutMe />
+```
+
+A repository showcasing some example wpbages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples)
+More information on adding pages in Svelte can be found in the [Svelte routing docs](https://svelte.dev/docs/kit/routing).
 
 ### Chart components
 
 ### Layout components
 
-COMPONENTS:
+### Markdown syntax
 
-CHARTS
+## Running Locally
+To preview the page, you can run:
 
-LAYOUT manipulation
-
-Markdown functionality supported:
+``` bash
+npm run dev
+```
