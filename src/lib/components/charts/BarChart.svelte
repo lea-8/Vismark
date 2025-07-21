@@ -4,10 +4,10 @@
   import * as Plot from '@observablehq/plot';
 
   let { 
-    dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
-    xData = '',
+    dataPath = '',  // source: https://observablehq.com/plot/features/plots#marks-option
+    titleData = '',
+    xData = '', 
     yData = '',
-    titleData = ''
     // captionData
     // xAxisUser
     // yAxisUser
@@ -22,25 +22,22 @@
   onMount(async () => {
     await loadData();
 
-    plotArea(data, xData, yData, titleData);
+    plotBar(data, xData, yData, titleData);
   });
 
-  function plotArea(dataset, xVar, yVar, title) {
-    let plotGraph = Plot.plot({
+  function plotBar(dataset, xVar, yVar, title) {
+    let plotGraph =  Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
       // marginBottom: 30,
       // marginLeft: 40,
-      color: {legend: true},
       title: title,
       // caption: "[ CAPTION ]",
-      y: {
-        grid: true,
-        // label: "[ AXIS LABEL ]"
-      },
+      x: {padding: 0.4},
+      y: {grid: true},
       marks: [
-        Plot.areaY(dataset, {x: xVar, y: yVar, fill: "industry", title: "industry"}),
-        Plot.ruleY([0]),
+        Plot.barY(dataset, {x: xVar, y: yVar, dx: 2, dy: 2}),
+        Plot.barY(dataset, {x: xVar, y: yVar, fill: "green", dx: -2, dy: -2}),
         Plot.frame()
       ]
     });
