@@ -127,7 +127,30 @@ Example data that can be used can be found in the [Vismark Examples repo](https:
 Page elements are components that define parts of a page to add expressivity.
 
 #### Grid layout
-`<Grid></Grid>` and `<Cell></Cell>` components are special, as they require opening and closing tags. They
+Grid and Cell components are special, as they require opening and closing tags. They define a grid layout by specifying the number of columns in the Grid and using Cells to add content to every part of the grid. The content goes in between the opening and closing tags like so: `<Grid>content</Grid>` and `<Cell>content</Cell>`
+
+Example usage:
+``` html
+
+<Grid columns={2} showGrid={false}>
+  <Cell hideCell={false}>
+    Some text and charts here!
+  </Cell>
+</Grid>
+```
+
+Variables for the Cell component:
+
+- `hideCell` (Boolean, default=false) - If true, the cell background colour and border become white and the cell becomes invisible.
+
+Variables for Grid component:
+
+- `columns` (Integer, default=2) - number of columns in the grid
+- `showGrid` (Boolean, default=false) - this is a helper option that highlights the outline of the entire grid (useful for development)
+
+Once a Grid layout has been defined using `<Grid></Grid>`, the Cell components will be added one by one to the right of the previous and after the full width of the grid has been used, the next cell will appear beneath it. For example, if 2 columns are specified the `<Cell></Cell>` components will appear on the page like this:
+
+![Graphical representation of the grid layout with two columns](/static/grid_layout_docs.png)
 
 #### Header & Footer
 Currently, the `<Header />` and `<Footer />` components are not parameterisable, but this might change based on user feedback.
