@@ -38,6 +38,67 @@ A repository showcasing some example wpbages created with Vismark can be found a
 More information on adding pages in Svelte can be found in the [Svelte routing docs](https://svelte.dev/docs/kit/routing).
 
 ### Chart components
+#### Area Chart
+Variables:
+
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (String) - name of columns that contain the y values
+- `titleData` (String) - title of the chart
+
+Example usage:
+```html
+<AreaChart 
+  dataPath='/data/unemployment.csv'
+  xData='date'
+  yData='unemployed'
+  titleData='Unemployement over time'
+/>
+```
+
+#### Bar Chart
+Variables:
+
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (String) - name of columns that contain the y values
+- `titleData` (String) - title of the chart
+
+Example usage:
+``` html
+  <BarChart
+    titleData="English letter ocurrences"
+    dataPath="data/alphabet.csv" 
+    xData="letter"
+    yData="frequency"
+  />
+```
+
+#### Line Chart
+Variables:
+
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (Array(String)) - names of columns that contain the y values (one column will have one line)
+- `titleData` (String) - title of the chart
+
+Example usage:
+``` html
+---
+yData: ["Open", "High", "Low", "Close"]
+
+---
+
+<LineChart 
+  dataPath="data/aapl.csv" 
+  xData="Date"
+  yData={yData}
+  titleData="Apple share price over time"
+/>
+```
+
+#### Example data
+Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data).
 
 ### Layout components
 
