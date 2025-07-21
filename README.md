@@ -37,7 +37,30 @@ These pages then need to be added to a `+page.svelte` as a regular Svelte compon
 A repository showcasing some example wpbages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples)
 More information on adding pages in Svelte can be found in the [Svelte routing docs](https://svelte.dev/docs/kit/routing).
 
+### Markdown syntax
+Basic markdown syntax is supported as defined in the [commonmark spec](https://commonmark.org/). They also provide a [cheat sheet](https://commonmark.org/help/) of simple commands for headings, text formatting, links, and lists.
+
+*To define variables such as arrays, these can be defined at the top of the `.vismd` file within a block separated by three dashes:*
+
+``` markdown
+---
+myArray: [item1, item2, item3, etc]
+
+---
+```
+
 ### Chart components
+Chart components will start with a capital letter and be added to the page using the following syntax:
+
+``` html
+<Chart 
+  variable1="somethin"
+  variable2="something"
+/>
+```
+
+The variables will allow you to parameterise the chart by defining a title, x and y variables and the path to the dataset used.
+
 #### Area Chart
 Variables:
 
@@ -100,9 +123,23 @@ yData: ["Open", "High", "Low", "Close"]
 #### Example data
 Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data).
 
-### Layout components
+### Page elements
+Page elements are components that define parts of a page to add expressivity.
 
-### Markdown syntax
+#### Grid layout
+`<Grid></Grid>` and `<Cell></Cell>` components are special, as they require opening and closing tags. They
+
+#### Header & Footer
+Currently, the `<Header />` and `<Footer />` components are not parameterisable, but this might change based on user feedback.
+
+Example usage:
+```html
+<Header />
+
+... Some text and charts ...
+
+<Footer />
+```
 
 ## Running Locally
 To preview the page, you can run:
