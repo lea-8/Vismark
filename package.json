@@ -1,6 +1,6 @@
 {
 	"name": "vismark",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Svelte component library including Mdsvex preprocessor to support creating complex webpages focusing on data visualisation.",
 	"homepage": "https://github.com/lea-8/Vismark",
 	"bugs": {
@@ -41,6 +41,14 @@
 		"./AreaChart": {
 			"types": "./dist/components/charts/AreaChart.svelte.d.ts",
 			"svelte": "./dist/components/charts/AreaChart.svelte"
+		},
+		"./Header": {
+			"types": "./dist/components/pageElements/Header.svelte.d.ts",
+			"svelte": "./dist/components/pageElements/Header.svelte"
+		},
+		"./Footer": {
+			"types": "./dist/components/pageElements/Footer.svelte.d.ts",
+			"svelte": "./dist/components/pageElements/Footer.svelte"
 		}
 	},
 	"peerDependencies": {

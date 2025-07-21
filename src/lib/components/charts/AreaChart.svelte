@@ -5,10 +5,12 @@
 
   let { 
     dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+    xData = '',
     yData = '',
     titleData=''
     // captionData
-    // axisUser
+    // xAxisUser
+    // yAxisUser
     // fillUser
   } = $props();
   let data;
