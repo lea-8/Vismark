@@ -1,6 +1,6 @@
 {
 	"name": "vismark",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "Svelte component library including Mdsvex preprocessor to support creating complex webpages focusing on data visualisation.",
 	"homepage": "https://github.com/lea-8/Vismark",
 	"bugs": {
@@ -49,6 +49,14 @@
 		"./Footer": {
 			"types": "./dist/components/pageElements/Footer.svelte.d.ts",
 			"svelte": "./dist/components/pageElements/Footer.svelte"
+		},
+		"./Grid": {
+			"types": "./dist/components/pageElements/Grid.svelte.d.ts",
+			"svelte": "./dist/components/pageElements/Grid.svelte"
+		},
+		"./Cell": {
+			"types": "./dist/components/pageElements/Cell.svelte.d.ts",
+			"svelte": "./dist/components/pageElements/Cell.svelte"
 		}
 	},
 	"peerDependencies": {
