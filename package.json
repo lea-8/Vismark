@@ -93,5 +93,8 @@
 		"d3": "^7.9.0",
 		"mdsvex": "^0.12.6",
 		"remark-footnotes": "^2.0.0"
+	},
+	"publishConfig": {
+		"@lea-8:registry": "https://www.npmjs.com/package/vismark"
 	}
 }
