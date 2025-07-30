@@ -145,10 +145,15 @@ Example usage:
 
 <Grid columns={2} showGrid={false}>
   <Cell hideCell={false}>
+    
     Some text and charts here!
+  
   </Cell>
 </Grid>
 ```
+
+> [!NOTE]
+> Please note that new lines must surreound the content within a Grid/Cell.
 
 Variables for the Cell component:
 
