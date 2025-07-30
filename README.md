@@ -164,9 +164,21 @@ Example usage:
 <Footer />
 ```
 
-## Running Locally
+## Previewing the page locally
 To preview the page, you can run:
 
 ``` bash
 npm run dev
 ```
+
+## Additional stuff
+### Syntax highlighting
+If you are using Visual Studio Code for development, you can add a file association to `.vismd` files to see syntax highlighting. Add the snippet below to the `settings.json file`:
+
+```json
+"files.associations": {
+    "*.vismd": "markdown"
+}
+```
+
+(Or alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language)).
