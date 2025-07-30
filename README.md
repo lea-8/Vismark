@@ -49,6 +49,17 @@ myArray: [item1, item2, item3, etc]
 ---
 ```
 
+## Components
+Components are entities on a webpage that Markdown cannot define. Every component used in a `.vismd` file needs to be imported. This can be done by adding the code below to the `.vismd` file:
+
+```html
+<script>
+  import Component from 'vismark/ComponentName';
+</script>
+```
+
+Then this component can be placed on the webpage, either with the `<Component />` or `<Component></Component>` syntax. Listed below are all components that Vismark supports along with an example of how to use it.
+
 ### Chart components
 Chart components will start with a capital letter and be added to the page using the following syntax:
 
@@ -181,4 +192,4 @@ If you are using Visual Studio Code for development, you can add a file associat
 }
 ```
 
-(Or alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language)).
+Alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language).
