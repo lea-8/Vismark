@@ -15,13 +15,17 @@ export const katex_blocks = () => (tree) => {
 			const str = katex.renderToString(node.value, {
 				displayMode: true,
 				leqno: false,
-				fleqn: false,
+				fleqn: true,
 				throwOnError: true,
 				errorColor: '#cc0000',
 				strict: 'warn',
 				output: 'htmlAndMathml',
 				trust: false,
-				macros: { '\\f': '#1f(#2)' }
+				macros: { 
+          '\\f': '#1f(#2)',
+          '\\CC': '\\mathbb{C}',
+					'\\vec': '\\mathbf'
+        }
 			});
 
 			node.type = 'raw';
