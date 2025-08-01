@@ -37,7 +37,7 @@ These pages then need to be added to a `+page.svelte` as a regular Svelte compon
 A repository showcasing some example wpbages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples)
 More information on adding pages in Svelte can be found in the [Svelte routing docs](https://svelte.dev/docs/kit/routing).
 
-### Markdown syntax
+## Markdown syntax
 Basic markdown syntax is supported as defined in the [commonmark spec](https://commonmark.org/). They also provide a [cheat sheet](https://commonmark.org/help/) of simple commands for headings, text formatting, links, and lists.
 
 *To define variables such as arrays, these can be defined at the top of the `.vismd` file within a block separated by three dashes:*
@@ -48,6 +48,12 @@ myArray: [item1, item2, item3, etc]
 
 ---
 ```
+
+### Foonotes
+> TODO
+
+### Maths
+> TODO
 
 ## Components
 Components are entities on a webpage that Markdown cannot define. Every component used in a `.vismd` file needs to be imported. This can be done by adding the code below to the `.vismd` file:
