@@ -78,6 +78,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"publint": "^0.3.2",
+		"remark-math": "^3.0.0",
 		"svelte": "^5.0.0",
 		"typescript": "^5.3.2",
 		"vite": "^7.0.4"
@@ -92,9 +93,11 @@
 		"@sveltejs/kit": "^2.16.0",
 		"d3": "^7.9.0",
 		"mdsvex": "^0.12.6",
-		"remark-footnotes": "^2.0.0"
+		"rehype-katex": "^5.0.0",
+		"remark-footnotes": "^2.0.0",
+		"unist-util-visit": "^2.0.3"
 	},
 	"publishConfig": {
-		  "registry": "https://github.com/lea-8/Vismark"
+		"registry": "https://github.com/lea-8/Vismark"
 	}
 }
