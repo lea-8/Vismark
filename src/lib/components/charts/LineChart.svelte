@@ -7,9 +7,10 @@
   
   let { 
     dataPath = '',  // source: https://observablehq.com/@observablehq/sample-datasets
-    titleData = '',
     xData = '', 
     yData = '',
+    fillData = '',
+    titleData = ''
   } = $props();
   let data;
   let chartContainer;
@@ -20,35 +21,36 @@
   onMount(async () => {
     await loadData();
 
-    plotLine(data, xData, yData, titleData);
+    plotLine(data, xData, yData, fillData, titleData);
   });
 
-  function gatherLines(dataset, xVar, yArray) {
-    let linePlots = []
-    for (let i = 0; i < yArray.length; i++) {
-      linePlots.push(Plot.lineY(dataset, {x: xVar, y: yArray[i], stroke: colours[i]}))
-    }
+  // function gatherLines(dataset, xVar, yArray) {
+  //   let linePlots = []
+  //   for (let i = 0; i < yArray.length; i++) {
+  //     linePlots.push(Plot.lineY(dataset, {x: xVar, y: yArray[i], stroke: colours[i]}))
+  //   }
 
-    return linePlots;
-  }
+  //   return linePlots;
+  // }
 
-  function plotLine(dataset, xVar, yVar, titleVar) {
+  function plotLine(dataset, xVar, yVar, fillVar, titleVar) {
     let plotGraph = Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
       // marginBottom: 30,
       // marginLeft: 40,
       // color: {legend: true},  // TODO: https://observablehq.com/@tophtucker/plot-coloring-lines-in-wide-untidy-data
-      grid: true,
+      // grid: true,
       title: titleVar,
       // caption: "[ CAPTION ]",      
       marks: [
         Plot.ruleY([0]),
-        Plot.axisX({ticks: "3 months", anchor: "bottom", label: "Date", labelAnchor: "left"}),
-        Plot.axisY({anchor: "left", label: "Price", labelAnchor: "top"}),
-        ...gatherLines(dataset, xVar, yVar),
+        // Plot.axisX({ticks: "3 months", anchor: "bottom", label: "Date", labelAnchor: "left"}),
+        // Plot.axisY({anchor: "left", label: "Price", labelAnchor: "top"}),
+        // ...gatherLines(dataset, xVar, yVar),
+        Plot.lineY(dataset, {x: xVar, y: yVar, z: fillVar}),
         Plot.gridX(),
-        Plot.frame()
+        // Plot.frame()
       ]
     });
     chartContainer.appendChild(plotGraph);
