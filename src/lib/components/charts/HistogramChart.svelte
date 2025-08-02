@@ -7,11 +7,11 @@
     dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
     xData = '',
     yData = '',
+    fillData = '',
     titleData = ''
     // captionData
     // xAxisUser
     // yAxisUser
-    // fillUser
   } = $props();
   let data;
   let chartContainer;
@@ -22,26 +22,17 @@
   onMount(async () => {
     await loadData();
 
-    plotArea(data, xData, yData, titleData);
+    plotHistogram(data, xData, yData, fillData, titleData);
   });
 
-  function plotArea(dataset, xVar, yVar, titleVar) {
+  function plotHistogram(dataset, xVar, yVar, fillVar, titleVar) {
     let plotGraph = Plot.plot({
-      // marginTop: 20,
-      // marginRight: 20,
-      // marginBottom: 30,
-      // marginLeft: 40,
-      color: {legend: true},
       title: titleVar,
-      // caption: "[ CAPTION ]",
-      y: {
-        grid: true,
-        // label: "[ AXIS LABEL ]"
-      },
+      y: {grid: true},
+      color: {legend: true},
       marks: [
-        Plot.areaY(dataset, {x: xVar, y: yVar, fill: "industry", title: "industry"}),
-        Plot.ruleY([0]),
-        // Plot.frame()
+        Plot.rectY(dataset, Plot.binX({y: yVar}, {x: xVar, fill: fillVar})),
+        Plot.ruleY([0])
       ]
     });
     chartContainer.appendChild(plotGraph);

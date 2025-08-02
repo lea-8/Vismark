@@ -50,6 +50,10 @@
 			"types": "./dist/components/charts/LineChart.svelte.d.ts",
 			"svelte": "./dist/components/charts/LineChart.svelte"
 		},
+		"./Histogram": {
+			"types": "./dist/components/charts/HistogramChart.svelte.d.ts",
+			"svelte": "./dist/components/charts/HistogramChart.svelte"
+		},
 		"./Header": {
 			"types": "./dist/components/pageElements/Header.svelte.d.ts",
 			"svelte": "./dist/components/pageElements/Header.svelte"
