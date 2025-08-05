@@ -58,6 +58,10 @@
 			"types": "./dist/components/charts/ScatterPlot.svelte.d.ts",
 			"svelte": "./dist/components/charts/ScatterPlot.svelte"
 		},
+		"./BoxPlot": {
+			"types": "./dist/components/charts/BoxPlot.svelte.d.ts",
+			"svelte": "./dist/components/charts/BoxPlot.svelte"
+		},
 		"./Header": {
 			"types": "./dist/components/pageElements/Header.svelte.d.ts",
 			"svelte": "./dist/components/pageElements/Header.svelte"

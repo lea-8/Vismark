@@ -7,11 +7,12 @@
     dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
     xData = '',
     yData = '',
+    // fillData = '',
+    fillColour = '',
     titleData = ''
-    // captionData
     // xAxisUser
     // yAxisUser
-    // fillUser
+    // showTootlTip
   } = $props();
   let data;
   let chartContainer;
@@ -22,26 +23,19 @@
   onMount(async () => {
     await loadData();
 
-    plotArea(data, xData, yData, titleData);
+    plotBox(data, xData, yData, fillColour, titleData);
   });
 
-  function plotArea(dataset, xVar, yVar, titleVar) {
+  function plotBox(dataset, xVar, yVar, fillVar, titleVar) {
     let plotGraph = Plot.plot({
-      // marginTop: 20,
-      // marginRight: 20,
-      // marginBottom: 30,
-      // marginLeft: 40,
-      color: {legend: true},
       title: titleVar,
-      // caption: "[ CAPTION ]",
       y: {
         grid: true,
-        // label: "[ AXIS LABEL ]"
+        inset: 6
       },
       marks: [
-        Plot.areaY(dataset, {x: xVar, y: yVar, fill: "industry", title: "industry"}),
-        Plot.ruleY([0]),
-        // Plot.frame()
+        Plot.boxY(dataset, {x: xVar, y: yVar, fill: fillVar}),
+        Plot.frame({stroke: "black", anchor: "bottom"})
       ]
     });
     chartContainer.appendChild(plotGraph);
