@@ -9,10 +9,8 @@
     yData = '',
     fillData = '',
     titleData = ''
-    // captionData
     // xAxisUser
     // yAxisUser
-    // fillUser
   } = $props();
   let data;
   let chartContainer;
@@ -22,13 +20,6 @@
   }
   onMount(async () => {
     await loadData();
-
-    // DEBUG
-    console.log("AreaChart")
-    var variables = data.columns;
-    variables.forEach(function(d) {
-      console.log("typeof " + d + ": " + typeof(data[1][d]))
-    })
 
     plotArea(data, xData, yData, fillData, titleData);
   });
@@ -41,7 +32,6 @@
       // marginLeft: 40,
       color: {legend: true},
       title: titleVar,
-      // caption: "[ CAPTION ]",
       y: {
         grid: true,
         // label: "[ AXIS LABEL ]"

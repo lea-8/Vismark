@@ -2,11 +2,9 @@
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
   import * as Plot from '@observablehq/plot';
-
-  import { colours } from './chartglobals.js';
   
   let { 
-    dataPath = '',  // source: https://observablehq.com/@observablehq/sample-datasets
+    dataPath = '',
     xData = '', 
     yData = '',
     fillData = '',
@@ -24,15 +22,6 @@
     plotLine(data, xData, yData, fillData, titleData);
   });
 
-  // function gatherLines(dataset, xVar, yArray) {
-  //   let linePlots = []
-  //   for (let i = 0; i < yArray.length; i++) {
-  //     linePlots.push(Plot.lineY(dataset, {x: xVar, y: yArray[i], stroke: colours[i]}))
-  //   }
-
-  //   return linePlots;
-  // }
-
   function plotLine(dataset, xVar, yVar, fillVar, titleVar) {
     let plotGraph = Plot.plot({
       // marginTop: 20,
@@ -40,8 +29,7 @@
       // marginBottom: 30,
       // marginLeft: 40,
       color: {legend: true},  // TODO: https://observablehq.com/@tophtucker/plot-coloring-lines-in-wide-untidy-data
-      title: titleVar,
-      // caption: "[ CAPTION ]",      
+      title: titleVar,      
       marks: [
         Plot.ruleY([0]),
         // Plot.axisX({ticks: "3 months", anchor: "bottom", label: "Date", labelAnchor: "left"}),
