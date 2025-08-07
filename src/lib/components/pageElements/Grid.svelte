@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(var(--num-columns), 1fr);
     gap: 1rem;
-    border: if(style(--show-grid: true): 2px solid #f76707; else: 2px solid #ffffff;); 
+    border: if(style(--show-grid: true): 2px solid #f76707; else: 0px solid #ffffff;); 
     border-radius: 5px;
   }
 </style>
