@@ -21,5 +21,6 @@
     gap: 1rem;
     border: if(style(--show-grid: true): 2px solid #f76707; else: 0px solid #ffffff;); 
     border-radius: 5px;
+    margin: 0.5em 0em;
   }
 </style>
