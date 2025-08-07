@@ -64,6 +64,7 @@
     border-radius: 8px;
     background-color: var(--background-colour); 
     padding: 1em;
+    margin: 0.5em 0em;
   }
 
   .aggregation-icon-container {
