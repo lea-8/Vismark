@@ -1,6 +1,8 @@
 # Vismark
 A lightweight libary for creating webpages in Svelte projects. Vismark allows for defining complex layouts and data visualisations using extended Markdown syntax. Available on npm as [vismark](https://www.npmjs.com/package/vismark).
 
+Example pages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples)
+
 ## Installation
 To install, use your desired package manager to install vismark. For npm this can be done as follows:
 
@@ -204,3 +206,6 @@ If you are using Visual Studio Code for development, you can add a file associat
 ```
 
 Alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language).
+
+### More examples
+Feel free to explore some example pages created with Vismark at [Vismark Examples](https://github.com/lea-8/Vismark-Examples)
