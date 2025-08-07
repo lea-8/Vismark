@@ -39,8 +39,7 @@
       // marginRight: 20,
       // marginBottom: 30,
       // marginLeft: 40,
-      // color: {legend: true},  // TODO: https://observablehq.com/@tophtucker/plot-coloring-lines-in-wide-untidy-data
-      // grid: true,
+      color: {legend: true},  // TODO: https://observablehq.com/@tophtucker/plot-coloring-lines-in-wide-untidy-data
       title: titleVar,
       // caption: "[ CAPTION ]",      
       marks: [
@@ -48,8 +47,9 @@
         // Plot.axisX({ticks: "3 months", anchor: "bottom", label: "Date", labelAnchor: "left"}),
         // Plot.axisY({anchor: "left", label: "Price", labelAnchor: "top"}),
         // ...gatherLines(dataset, xVar, yVar),
-        Plot.lineY(dataset, {x: xVar, y: yVar, z: fillVar}),
+        Plot.lineY(dataset, {x: xVar, y: yVar, z: fillVar, stroke: fillVar}),
         Plot.gridX(),
+        Plot.gridY()
         // Plot.frame()
       ]
     });

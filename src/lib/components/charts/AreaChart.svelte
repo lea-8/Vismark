@@ -7,6 +7,7 @@
     dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
     xData = '',
     yData = '',
+    fillData = '',
     titleData = ''
     // captionData
     // xAxisUser
@@ -22,10 +23,17 @@
   onMount(async () => {
     await loadData();
 
-    plotArea(data, xData, yData, titleData);
+    // DEBUG
+    console.log("AreaChart")
+    var variables = data.columns;
+    variables.forEach(function(d) {
+      console.log("typeof " + d + ": " + typeof(data[1][d]))
+    })
+
+    plotArea(data, xData, yData, fillData, titleData);
   });
 
-  function plotArea(dataset, xVar, yVar, titleVar) {
+  function plotArea(dataset, xVar, yVar, fillVar, titleVar) {
     let plotGraph = Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
@@ -39,7 +47,7 @@
         // label: "[ AXIS LABEL ]"
       },
       marks: [
-        Plot.areaY(dataset, {x: xVar, y: yVar, fill: "industry", title: "industry"}),
+        Plot.areaY(dataset, {x: xVar, y: yVar, fill: fillVar}),
         Plot.ruleY([0]),
         // Plot.frame()
       ]
