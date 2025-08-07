@@ -7,8 +7,8 @@
 
   let {
     type = '', // legend, info, chart
-    borderColour='',
-    backgroudnColour='',
+    borderColour='#ececec',
+    backgroundColour='#f8f8f8',
     badgeType='' // totalUK, perCapita, relativeCB
   } = $props();
   let badgeContainer;
@@ -45,7 +45,13 @@
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->
-<div class="widget">
+<div 
+  class="widget"
+  style="
+    --border-colour: {borderColour};
+    --background-colour: {backgroundColour}
+    "
+>
   <div class="aggregation-icon-container" id="badgeDiv">
     <img src={badgePath} alt="badge" width=36 height=36>
   </div>
@@ -54,9 +60,9 @@
 
 <style>
   .widget {
-    border: 2px solid #123456;
-    border-radius: 10px;
-    background-color: rgb(50, 168, 82); 
+    border: 2px solid var(--border-colour); 
+    border-radius: 8px;
+    background-color: var(--background-colour); 
     padding: 1em;
   }
 
@@ -67,5 +73,5 @@
     width: 99%;
     margin-top: 20px;
     margin-right: 10px;
-}
+  }
 </style>
