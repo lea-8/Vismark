@@ -5,13 +5,14 @@
 
   let { 
     dataPath = '',  // source: https://observablehq.com/plot/features/plots#marks-option
-    titleData = '',
     xData = '', 
     yData = '',
+    fillData = '',
+    titleData = '',
+    groupBy = ''
     // captionData
     // xAxisUser
     // yAxisUser
-    // fillUser
   } = $props();
   let data;
   let chartContainer;
@@ -22,10 +23,10 @@
   onMount(async () => {
     await loadData();
 
-    plotBar(data, xData, yData, titleData);
+    plotBar(data, xData, yData, fillData, titleData, groupBy);
   });
 
-  function plotBar(dataset, xVar, yVar, titleVar) {
+  function plotBar(dataset, xVar, yVar, fillVar, titleVar, groupVar) {
     let plotGraph =  Plot.plot({
       // marginTop: 20,
       // marginRight: 20,
@@ -33,12 +34,17 @@
       // marginLeft: 40,
       title: titleVar,
       // caption: "[ CAPTION ]",
-      x: {padding: 0.4},
+      x: {axis: null, paddingOuter: 0.2},
       y: {grid: true},
       marks: [
-        Plot.barY(dataset, {x: xVar, y: yVar, dx: 2, dy: 2}),
-        Plot.barY(dataset, {x: xVar, y: yVar, fill: "green", dx: -2, dy: -2}),
-        Plot.frame()
+        Plot.barY(dataset, {
+          x: xVar, 
+          y: yVar, 
+          fill: fillVar,
+          fx: groupVar
+        }),
+        // Plot.barY(dataset, {x: xVar, y: yVar, fill: fillVar, dx: -2, dy: -2}),
+        Plot.ruleY([0])
       ]
     });
     chartContainer.appendChild(plotGraph);
