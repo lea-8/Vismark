@@ -1,6 +1,6 @@
 {
 	"name": "vismark",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Svelte component library including Mdsvex preprocessor to support creating complex webpages focusing on data visualisation.",
 	"homepage": "https://github.com/lea-8/Vismark",
 	"bugs": {
@@ -82,13 +82,17 @@
 			"types": "./dist/components/pageElements/Widget.svelte.d.ts",
 			"svelte": "./dist/components/pageElements/Widget.svelte"
 		},
+		"./Image": {
+			"types": "./dist/components/pageElements/Image.svelte.d.ts",
+			"svelte": "./dist/components/pageElements/Image.svelte"
+		},
 		"./Dropdown": {
 			"types": "./dist/components/text/Dropdown.svelte.d.ts",
 			"svelte": "./dist/components/text/Dropdown.svelte"
 		}
 	},
 	"peerDependencies": {
-		"svelte": "^5.0.0"
+		"svelte": "^4.2.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.0.0",
@@ -98,7 +102,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"publint": "^0.3.2",
-		"svelte": "^5.0.0",
+		"svelte": "^4.2.0",
 		"typescript": "^5.3.2",
 		"vite": "^7.0.4"
 	},
