@@ -1,9 +1,7 @@
 <script>
-  let {
-    columns = 2,
-    gap = 2,
-    showGrid = false
-  } = $props();
+  export let columns = 2;
+  // export let gap = 2;
+  export let showGrid = false;
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->

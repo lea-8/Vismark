@@ -1,7 +1,5 @@
 <script>
-  let {
-    shownText = ""
-  } = $props();
+  export let shownText = "";
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->

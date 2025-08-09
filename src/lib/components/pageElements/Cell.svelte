@@ -1,10 +1,8 @@
 <script>
-  let {
-    hideCell = false,
-    rowSpan = '',
-    colSpan = '',
-    sticky = false
-  } = $props();
+  export let hideCell = false;
+  // export let rowSpan = '';
+  // export let colSpan = '';
+  // export let sticky = false;
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->

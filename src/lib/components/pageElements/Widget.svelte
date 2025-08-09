@@ -5,15 +5,13 @@
   import badgePerCapita from "../../assets/badges/per_capita.png";
   import badgeRelative from "../../assets/badges/percentage.png";
 
-  let {
-    type = '', // legend, info, chart
-    borderColour='#ececec',
-    backgroundColour='#f8f8f8',
-    badgeType='' // totalUK, perCapita, relativeCB
-  } = $props();
+  export let type = '';  // legend, info, chart
+  export let borderColour='#ececec';
+  export let backgroundColour='#f8f8f8';
+  export let badgeType='';  // totalUK, perCapita, relativeCB
   let badgeContainer;
 
-  let badgePath = $state('');
+  $: badgePath = '';
   const baseRelPath = '../../assets/badges/';
 
   onMount(() => {
