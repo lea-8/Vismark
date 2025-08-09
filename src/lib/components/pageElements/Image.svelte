@@ -1,8 +1,6 @@
 <script>
-  let {
-    path = '',
-    scale = "100%"
-  } = $props();
+  export let path = '';
+  export let scale = "100%";
 </script>
 
 <img 
