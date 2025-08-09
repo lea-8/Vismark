@@ -3,17 +3,15 @@
   import * as d3 from 'd3';
   import * as Plot from '@observablehq/plot';
 
-  let { 
-    dataPath = '',  // source: https://observablehq.com/plot/features/plots#marks-option
-    xData = '', 
-    yData = '',
-    fillData = '',
-    titleData = '',
-    groupBy = ''
-    // captionData
-    // xAxisUser
-    // yAxisUser
-  } = $props();
+  export let dataPath = '';  // source: https://observablehq.com/plot/features/plots#marks-option
+  export let xData = '';
+  export let yData = '';
+  export let fillData = '';
+  export let titleData = '';
+  export let groupBy = '';
+  // captionData
+  // xAxisUser
+  // yAxisUser
   let data;
   let chartContainer;
 

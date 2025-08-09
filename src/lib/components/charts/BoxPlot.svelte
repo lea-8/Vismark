@@ -3,17 +3,15 @@
   import * as d3 from 'd3';
   import * as Plot from '@observablehq/plot';
 
-  let { 
-    dataPath = '',  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
-    xData = '',
-    yData = '',
-    // fillData = '',
-    fillColour = '',
-    titleData = ''
-    // xAxisUser
-    // yAxisUser
-    // showTootlTip
-  } = $props();
+  export let dataPath = '';  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+  export let xData = '';
+  export let yData = '';
+  // fillData = '',
+  export let fillColour = '';
+  export let titleData = '';
+  // xAxisUser
+  // yAxisUser
+  // showTootlTip
   let data;
   let chartContainer;
 
