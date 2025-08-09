@@ -3,13 +3,11 @@
   import * as d3 from 'd3';
   import * as Plot from '@observablehq/plot';
   
-  let { 
-    dataPath = '',
-    xData = '', 
-    yData = '',
-    fillData = '',
-    titleData = ''
-  } = $props();
+  export let dataPath = '';
+  export let xData = '';
+  export let yData = '';
+  export let fillData = '';
+  export let titleData = '';
   let data;
   let chartContainer;
 
