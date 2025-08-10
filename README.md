@@ -4,7 +4,7 @@ A lightweight libary for creating webpages in Svelte projects. Vismark allows fo
 Example pages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples).
 
 ## Installation
-To install, use your desired package manager to install vismark. For npm this can be done as follows:
+For npm installation can be done as follows:
 
 ```bash
 npm install vismark
@@ -42,20 +42,44 @@ More information on adding pages in Svelte can be found in the [Svelte routing d
 ## Markdown syntax
 Basic markdown syntax is supported as defined in the [commonmark spec](https://commonmark.org/). They also provide a [cheat sheet](https://commonmark.org/help/) of simple commands for headings, text formatting, links, and lists.
 
-*To define variables such as arrays, these can be defined at the top of the `.vismd` file within a block separated by three dashes:*
+<!-- *To define variables such as arrays, these can be defined at the top of the `.vismd` file within a block separated by three dashes:*
 
 ``` markdown
 ---
 myArray: [item1, item2, item3, etc]
 
 ---
-```
+``` -->
+
+Additional support is also available for footnotes and maths formulae formatting.
 
 ### Foonotes
-> TODO
+Footnotes allow you to keep the main text free from clutter. You can add them by specifying the footnote number (e.g. `^1`) and surrounding it with square brackets. An example is given below:
+
+```markdown
+Here's the main text with a footnote[^1].
+
+[^1]: This is the first footnote.
+```
 
 ### Maths
-> TODO
+In order to render maths formulae nicely, the KaTeX library is used. A list of supported maths symbols and notation can be found in the [KaTeX docs](https://katex.org/docs/supported). The maths must then be placed inside either:
+
+- Single dollar signs (`$`), e.g. `$E = mc^2$` for inline display.
+- Surrounded by three backticks and specifying 'math' for maths on a new line:
+  <pre>
+    ```math
+      E = mc^2
+    ```
+  </pre>
+
+- Double dollar signs (`$$`), for centered maths formulae:
+  ```
+  $$
+    E = mc^2
+  $$
+  ```
+
 
 ## Components
 Components are entities on a webpage that Markdown cannot define. Every component used in a `.vismd` file needs to be imported. This can be done by adding the code below to the `.vismd` file:
@@ -116,6 +140,12 @@ Example usage:
   />
 ```
 
+#### Box Plot
+> TODO
+
+#### Histogram
+> TODO
+
 #### Line Chart
 Variables:
 
@@ -138,6 +168,9 @@ yData: ["Open", "High", "Low", "Close"]
   titleData="Apple share price over time"
 />
 ```
+
+#### Scatter Plot
+> TODO
 
 #### Example data
 Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data).
@@ -187,6 +220,16 @@ Example usage:
 
 <Footer />
 ```
+
+#### Image
+> TODO
+
+#### Widget
+> TODO
+
+### Text components
+#### Dropdown
+> TODO
 
 ## Previewing the page locally
 To preview the page, you can run:
