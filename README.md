@@ -69,14 +69,14 @@ In order to render maths formulae nicely, the KaTeX library is used. A list of s
 - Surrounded by three backticks and specifying 'math' for maths on a new line:
   <pre>
     ```math
-      E = mc^2
+    E = mc^2
     ```
   </pre>
 
 - Double dollar signs (`$$`), for centered maths formulae:
   ```
   $$
-    E = mc^2
+  E = mc^2
   $$
   ```
 
@@ -97,19 +97,23 @@ Chart components will start with a capital letter and be added to the page using
 
 ``` html
 <Chart 
-  variable1="somethin"
+  variable1="something"
   variable2="something"
 />
 ```
 
 The variables will allow you to parameterise the chart by defining a title, x and y variables and the path to the dataset used.
 
+#### Example data
+Sample data can be found [here](https://github.com/lea-8/Vismark/tree/main/src/lib/assets/sampleData) if you want to follow along with the examples here.
+
 #### Area Chart
 Variables:
 
 - `dataPath` (String) - path to the data
 - `xData` (String) - name of column that contains the x values
-- `yData` (String) - name of columns that contain the y values
+- `yData` (String) - name of column that contain the y values
+- `fillData` (String) - name of column containing the data for colouring the chart markers
 - `titleData` (String) - title of the chart
 
 Example usage:
@@ -118,6 +122,7 @@ Example usage:
   dataPath='/data/unemployment.csv'
   xData='date'
   yData='unemployed'
+  fillData="industry"
   titleData='Unemployement over time'
 />
 ```
@@ -128,52 +133,104 @@ Variables:
 - `dataPath` (String) - path to the data
 - `xData` (String) - name of column that contains the x values
 - `yData` (String) - name of columns that contain the y values
+- `fillData` (String) - name of column containing the data for colouring the chart markers
+- `groupBy` (String) - name of the column containing the facets to partition the bars into groups
 - `titleData` (String) - title of the chart
 
 Example usage:
 ``` html
   <BarChart
-    titleData="English letter ocurrences"
-    dataPath="data/alphabet.csv" 
-    xData="letter"
-    yData="frequency"
+    dataPath="data/population-state-age.csv" 
+    xData="key"
+    yData="population"
+    fillData="key"
+    groupBy="state"
+    titleData="Population age for 6 US states"
   />
 ```
 
 #### Box Plot
-> TODO
+Variables:
+
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (String) - name of column that contain the y values
+- `fillColour` (String) - name or value of the colour of the boxes in the plot
+- `titleData` (String) - title of the chart
+
+Example usage:
+```html
+  <BoxPlot 
+    dataPath="data/morley.csv"
+    xData="Expt"
+    yData="Speed"
+    fillColour="#eb66a7"
+    titleData="Speed of Light - Morley Experiment"
+  />
+```
 
 #### Histogram
-> TODO
+Variables:
+
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (String) - name of column that contain the y values
+- `fillData` (String) - name of column containing the data for colouring the chart markers
+- `titleData` (String) - title of the chart
+
+Example usage:
+```html
+  <Histogram 
+    dataPath="data/olympians.csv" 
+    xData="weight"
+    yData="count"
+    fillData="sex"
+    titleData="Olympic athletes by weight"
+  />
+```
 
 #### Line Chart
 Variables:
 
 - `dataPath` (String) - path to the data
 - `xData` (String) - name of column that contains the x values
-- `yData` (Array(String)) - names of columns that contain the y values (one column will have one line)
+- `yData` (String) - name of column that contain the y values
+- `fillData` (String) - name of column containing the data for colouring the chart markers
 - `titleData` (String) - title of the chart
 
 Example usage:
 ``` html
----
-yData: ["Open", "High", "Low", "Close"]
-
----
-
 <LineChart 
-  dataPath="data/aapl.csv" 
-  xData="Date"
-  yData={yData}
-  titleData="Apple share price over time"
+  dataPath="data/unemployment.csv"
+  xData="date"
+  yData="unemployed"
+  fillData="industry"
+  titleData="Unemployment by industry over time"
 />
 ```
 
 #### Scatter Plot
-> TODO
+Variables:
 
-#### Example data
-Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data).
+- `dataPath` (String) - path to the data
+- `xData` (String) - name of column that contains the x values
+- `yData` (String) - name of column that contain the y values
+- `fillData` (String) - name of column containing the data for colouring the chart markers
+- `titleData` (String) - title of the chart
+
+Example usage:
+```html
+  <ScatterPlot 
+    dataPath="data/penguins.csv"
+    xData="culmen_length_mm"
+    yData="culmen_depth_mm"
+    fillData="species"
+    titleData="Penguin culmen sizes by species"
+  />
+```
+
+<!-- #### Example data
+Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data). -->
 
 ### Page elements
 Page elements are components that define parts of a page to add expressivity.
