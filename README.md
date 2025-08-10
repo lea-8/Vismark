@@ -102,7 +102,7 @@ Chart components will start with a capital letter and be added to the page using
 />
 ```
 
-The variables will allow you to parameterise the chart by defining a title, x and y variables and the path to the dataset used.
+The variables will allow you to parameterise the chart by defining a title, x and y variables and the path to the dataset used. **All data must be in [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values) format.**
 
 #### Example data
 Sample data can be found [here](https://github.com/lea-8/Vismark/tree/main/src/lib/assets/sampleData) if you want to follow along with the examples here.
@@ -233,14 +233,13 @@ Example usage:
 Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data). -->
 
 ### Page elements
-Page elements are components that define parts of a page to add expressivity.
+Page elements are components that define larger parts of a page to add expressivity.
 
 #### Grid layout
 Grid and Cell components are special, as they require opening and closing tags. They define a grid layout by specifying the number of columns in the Grid and using Cells to add content to every part of the grid. The content goes in between the opening and closing tags like so: `<Grid>content</Grid>` and `<Cell>content</Cell>`
 
 Example usage:
 ``` html
-
 <Grid columns={2} showGrid={false}>
   <Cell hideCell={false}>
     
@@ -251,11 +250,11 @@ Example usage:
 ```
 
 > [!NOTE]
-> Please note that new lines must surreound the content within a Grid/Cell.
+> Please note that new lines must surround the content within a Grid/Cell.
 
 Variables for the Cell component:
 
-- `hideCell` (Boolean, default=false) - If true, the cell background colour and border become white and the cell becomes invisible.
+- `hideCell` (Boolean, default=false) - If true, the cell background colour and border become white and the cell becomes transparent.
 
 Variables for Grid component:
 
@@ -279,14 +278,64 @@ Example usage:
 ```
 
 #### Image
-> TODO
+An image (.jpeg, .png, .svg) with an option to specify its size.
+
+Variables:
+- `path` (String) - path to the image file
+- `scale` (String) - percentage to scale the image by. (For example, to make the image half the size, specify `scale="50%"`)
+
+Example usage:
+```html
+<Image 
+  path="derry_graph.png"
+  scale="20%"
+/>
+```
 
 #### Widget
-> TODO
+A widget allows you to style chunks of a page.
+
+Variables:
+- `borderColour` (String) - colour of the border
+- `backgroundColour` (String) - colour of the background
+- `badgeType` (String) - an optional badge to give additional information on what data is being displayed. The options are:
+  - `totalUK` - shows the total benefit/cost for all of the UK
+  - `perCapita` - show the cost/benefit per person in each LAD
+  - `relativeCB` - Contribution to national benefits
+
+Example usage:
+```html
+<Widget
+  borderColour="#000000"
+  backgroundColour="#f0f0f0"
+  badgeType="totalUK"
+>
+
+  Some text and charts here!
+
+</Widget>
+```
 
 ### Text components
 #### Dropdown
-> TODO
+<details>
+<summary>A dropdown allows you to  click on the arrow...</summary>
+<br>
+... to reveal some more details.
+</details>
+<br>
+
+Arguments:
+- `shownText` (String) - The text that is always visible (next to the dropdown arrow icon ▼)
+
+Example usage:
+```html
+<Dropdown 
+  shownText="This is a dropdown!"
+>
+  This is hidden text.
+</Dropdown>
+```
 
 ## Previewing the page locally
 To preview the page, you can run:
@@ -305,7 +354,7 @@ If you are using Visual Studio Code for development, you can add a file associat
 }
 ```
 
-Alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language).
+Alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language). Other code editors and IDEs may have similar options.
 
 ### More examples
 Feel free to explore some example pages created with Vismark at [Vismark Examples](https://github.com/lea-8/Vismark-Examples).
