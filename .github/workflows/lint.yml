@@ -1,4 +1,4 @@
-name: Lint
+name: Lint-test
 
 on: [push, pull_request]
 
@@ -19,7 +19,7 @@ jobs:
       run: npm install
 
     - name: Run ESLint
-      run: npm run lint
+      run: npm run lint-test
 
     - name: Upload ESLint report
       uses: actions/upload-artifact@v4

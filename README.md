@@ -74,7 +74,7 @@ In order to render maths formulae nicely, the KaTeX library is used. A list of s
   </pre>
 
 - Double dollar signs (`$$`), for centered maths formulae:
-  ```
+  ```latex
   $$
   E = mc^2
   $$

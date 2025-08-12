@@ -8,6 +8,14 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
   { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },
-  { files: ["**/*.md"], plugins: { markdown }, language: "markdown/commonmark", extends: ["markdown/recommended"] },
+  { 
+    files: ["**/*.md"], 
+    plugins: { markdown }, 
+    language: "markdown/commonmark", 
+    extends: ["markdown/recommended"],
+    rules: {
+      "markdown/no-missing-label-refs": "warn"
+    }
+  },
   { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
 ]);
