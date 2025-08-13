@@ -5,7 +5,7 @@
 	import badgePerCapita from '../../assets/badges/per_capita.png';
 	import badgeRelative from '../../assets/badges/percentage.png';
 
-	export let type = ''; // legend, info, chart
+	// export let type = ''; // legend, info, chart
 	export let borderColour = '#ececec';
 	export let backgroundColour = '#f8f8f8';
 	export let badgeType = ''; // totalUK, perCapita, relativeCB
