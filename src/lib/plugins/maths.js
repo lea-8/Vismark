@@ -21,11 +21,11 @@ export const katex_blocks = () => (tree) => {
 				strict: 'warn',
 				output: 'htmlAndMathml',
 				trust: false,
-				macros: { 
-          '\\f': '#1f(#2)',
-          '\\CC': '\\mathbb{C}',
+				macros: {
+					'\\f': '#1f(#2)',
+					'\\CC': '\\mathbb{C}',
 					'\\vec': '\\mathbf'
-        }
+				}
 			});
 
 			node.type = 'raw';
