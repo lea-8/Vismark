@@ -3,6 +3,13 @@ name: Lint and Format
 on: [push, pull_request]
 
 jobs:
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check formatting with Prettier
+        run: npm run format-check
+
   eslint:
     runs-on: ubuntu-latest
 
@@ -26,10 +33,3 @@ jobs:
         with:
           name: eslint-report
           path: testing/reports/eslint-report.json
-
-  prettier:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check formatting with Prettier
-        run: npm run format -- --check

@@ -4,7 +4,6 @@ import js from '@eslint/js';
 import globals from 'globals';
 import json from '@eslint/json';
 import markdown from '@eslint/markdown';
-import css from '@eslint/css';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig(
@@ -36,7 +35,7 @@ export default defineConfig(
 			extends: ['markdown/recommended'],
 			rules: { 'markdown/no-missing-label-refs': 'warn' }
 		}
-	], // { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
+	],
 	prettier,
 	...svelte.configs.prettier
 );

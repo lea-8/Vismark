@@ -19,7 +19,9 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"format": "prettier --write ./src",
-		"lint": "eslint ./src --format json --output-file testing/reports/eslint-report.json && prettier --check .",
+		"format-check": "prettier --check ./src",
+		"lint-auto": "eslint ./src --format json --output-file testing/reports/eslint-report.json && prettier --check .",
+		"lint": "eslint ./src --format json --output-file testing/reports/eslint-report.json",
 		"lint-test": "eslint ./README.md"
 	},
 	"files": [
