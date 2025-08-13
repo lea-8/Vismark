@@ -18,16 +18,26 @@
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->
-<div class="grid-layout" style="--num-columns: {columns}; --show-grid: {showGrid}">
+<!-- <div class="grid-layout" style="--num-columns: {columns}; --show-grid: {showGrid}"> -->
+<div class="grid-layout {showGrid ? 'show-grid' : 'hide-grid'}">
 	<slot />
 </div>
 
 <style>
-	.grid-layout {
+	.grid-layout.show-grid {
 		display: grid;
 		grid-template-columns: repeat(var(--num-columns), 1fr);
 		gap: 1rem;
-		border: if(style(--show-grid: true): 2px solid #f76707; else: 0px solid #ffffff;);
+		border: 2px solid #f76707;
+		border-radius: 5px;
+		margin: 0.5em 0em;
+	}
+
+	.grid-layout.hide-grid {
+		display: grid;
+		grid-template-columns: repeat(var(--num-columns), 1fr);
+		gap: 1rem;
+		border: 0px solid #ffffff;
 		border-radius: 5px;
 		margin: 0.5em 0em;
 	}
