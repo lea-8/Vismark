@@ -98,7 +98,7 @@ Then this component can be placed on the webpage, either with the `<Component />
 
 Chart components will start with a capital letter and be added to the page using the following syntax:
 
-```html
+```svelte
 <Chart variable1="something" variable2="something" />
 ```
 
@@ -142,7 +142,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <BarChart
 	dataPath="data/population-state-age.csv"
 	xData="key"
@@ -165,7 +165,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <BoxPlot
 	dataPath="data/morley.csv"
 	xData="Expt"
@@ -187,7 +187,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <Histogram
 	dataPath="data/olympians.csv"
 	xData="weight"
@@ -209,7 +209,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <LineChart
 	dataPath="data/unemployment.csv"
 	xData="date"
@@ -231,7 +231,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <ScatterPlot
 	dataPath="data/penguins.csv"
 	xData="culmen_length_mm"
@@ -253,7 +253,7 @@ Grid and Cell components are special, as they require opening and closing tags. 
 
 Example usage:
 
-```html
+```svelte
 <Grid columns="{2}" showGrid="{false}">
 	<Cell hideCell="{false}"> Some text and charts here! </Cell>
 </Grid>
@@ -281,7 +281,7 @@ Currently, the `<Header />` and `<Footer />` components are not parameterisable,
 
 Example usage:
 
-```html
+```svelte
 <Header />
 
 ... Some text and charts ...
@@ -300,7 +300,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <Image path="derry_graph.png" scale="20%" />
 ```
 
@@ -319,7 +319,7 @@ Variables:
 
 Example usage:
 
-```html
+```svelte
 <Widget borderColour="#000000" backgroundColour="#f0f0f0" badgeType="totalUK">
 	Some text and charts here!
 </Widget>
@@ -342,7 +342,7 @@ Arguments:
 
 Example usage:
 
-```html
+```svelte
 <Dropdown shownText="This is a dropdown!"> This is hidden text. </Dropdown>
 ```
 

@@ -1,15 +1,36 @@
+<!--
+@component
+Stacked area chart
+
+@example
+
+```svelte
+<AreaChart
+	dataPath="/data/unemployment.csv"
+	xData="date"
+	yData="unemployed"
+	fillData="industry"
+	titleData="Unemployement over time"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
-	export let dataPath = ''; // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+	/** Path to CSV file with data */
+	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
+	/** Data to add colour dimension */
 	export let fillData = '';
+	/** Chart title */
 	export let titleData = '';
-	// xAxisUser
-	// yAxisUser
+
 	let data;
 	let chartContainer;
 
@@ -24,21 +45,12 @@
 
 	function plotArea(dataset, xVar, yVar, fillVar, titleVar) {
 		let plotGraph = Plot.plot({
-			// marginTop: 20,
-			// marginRight: 20,
-			// marginBottom: 30,
-			// marginLeft: 40,
 			color: { legend: true },
 			title: titleVar,
 			y: {
 				grid: true
-				// label: "[ AXIS LABEL ]"
 			},
-			marks: [
-				Plot.areaY(dataset, { x: xVar, y: yVar, fill: fillVar }),
-				Plot.ruleY([0])
-				// Plot.frame()
-			]
+			marks: [Plot.areaY(dataset, { x: xVar, y: yVar, fill: fillVar }), Plot.ruleY([0])]
 		});
 		chartContainer.appendChild(plotGraph);
 

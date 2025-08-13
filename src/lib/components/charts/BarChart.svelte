@@ -1,17 +1,39 @@
+<!--
+@component
+Bar chart
+
+@example
+
+```svelte
+<BarChart
+	dataPath="data/population-state-age.csv"
+	xData="key"
+	yData="population"
+	fillData="key"
+	groupBy="state"
+	titleData="Population age for 6 US states"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
-	export let dataPath = ''; // source: https://observablehq.com/plot/features/plots#marks-option
+	/** Path to CSV file with data */
+	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
+	/** Data to add colour dimension */
 	export let fillData = '';
-	export let titleData = '';
+	/** place groups of bars together under a common category */
 	export let groupBy = '';
-	// captionData
-	// xAxisUser
-	// yAxisUser
+	/** Chart title */
+	export let titleData = '';
+
 	let data;
 	let chartContainer;
 
@@ -26,12 +48,7 @@
 
 	function plotBar(dataset, xVar, yVar, fillVar, titleVar, groupVar) {
 		let plotGraph = Plot.plot({
-			// marginTop: 20,
-			// marginRight: 20,
-			// marginBottom: 30,
-			// marginLeft: 40,
 			title: titleVar,
-			// caption: "[ CAPTION ]",
 			x: { axis: null, paddingOuter: 0.2 },
 			y: { grid: true },
 			marks: [
@@ -41,7 +58,6 @@
 					fill: fillVar,
 					fx: groupVar
 				}),
-				// Plot.barY(dataset, {x: xVar, y: yVar, fill: fillVar, dx: -2, dy: -2}),
 				Plot.ruleY([0])
 			]
 		});

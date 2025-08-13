@@ -1,13 +1,36 @@
+<!--
+@component
+Line chart
+
+@example
+
+```svelte
+<LineChart
+	dataPath="data/unemployment.csv"
+	xData="date"
+	yData="unemployed"
+	fillData="industry"
+	titleData="Unemployment by industry over time"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
+	/** Path to CSV file with data */
 	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
+	/** Data to add colour dimension */
 	export let fillData = '';
+	/** Chart title */
 	export let titleData = '';
+
 	let data;
 	let chartContainer;
 
@@ -22,21 +45,13 @@
 
 	function plotLine(dataset, xVar, yVar, fillVar, titleVar) {
 		let plotGraph = Plot.plot({
-			// marginTop: 20,
-			// marginRight: 20,
-			// marginBottom: 30,
-			// marginLeft: 40,
-			color: { legend: true }, // TODO: https://observablehq.com/@tophtucker/plot-coloring-lines-in-wide-untidy-data
+			color: { legend: true },
 			title: titleVar,
 			marks: [
 				Plot.ruleY([0]),
-				// Plot.axisX({ticks: "3 months", anchor: "bottom", label: "Date", labelAnchor: "left"}),
-				// Plot.axisY({anchor: "left", label: "Price", labelAnchor: "top"}),
-				// ...gatherLines(dataset, xVar, yVar),
 				Plot.lineY(dataset, { x: xVar, y: yVar, z: fillVar, stroke: fillVar }),
 				Plot.gridX(),
 				Plot.gridY()
-				// Plot.frame()
 			]
 		});
 		chartContainer.appendChild(plotGraph);

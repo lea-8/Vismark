@@ -1,17 +1,36 @@
+<!--
+@component
+Scatter plot chart
+
+@example
+
+```svelte
+<ScatterPlot
+	dataPath="data/penguins.csv"
+	xData="culmen_length_mm"
+	yData="culmen_depth_mm"
+	fillData="species"
+	titleData="Penguin culmen sizes by species"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
-	export let dataPath = ''; // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+	/** Path to CSV file with data */
+	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
+	/** Data to add colour dimension */
 	export let fillData = '';
+	/** Chart title */
 	export let titleData = '';
-	// captionData
-	// xAxisUser
-	// yAxisUser
-	// fillUser
+
 	let data;
 	let chartContainer;
 
@@ -30,16 +49,12 @@
 			x: {
 				grid: true,
 				nice: true
-				// label: "[ AXIS LABEL ]"
 			},
 			y: {
 				grid: true
-				// label: "[ AXIS LABEL ]"
 			},
 			marks: [
 				Plot.dot(dataset, { x: xVar, y: yVar, stroke: fillVar }),
-				// Plot.ruleY(),
-				// Plot.ruleX(dataset, {stroke: "gray"})
 				Plot.frame({ stroke: 'black', anchor: 'bottom' }),
 				Plot.frame({ stroke: 'black', anchor: 'left' })
 			]

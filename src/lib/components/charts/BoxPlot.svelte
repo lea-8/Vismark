@@ -1,17 +1,36 @@
+<!--
+@component
+Box plot chart
+
+@example
+
+```svelte
+<BoxPlot
+	dataPath="data/morley.csv"
+	xData="Expt"
+	yData="Speed"
+	fillColour="#eb66a7"
+	titleData="Speed of Light - Morley Experiment"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
-	export let dataPath = ''; // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+	/** Path to CSV file with data */
+	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
-	// fillData = '',
+	/** Colour for the box markers */
 	export let fillColour = '';
+	/** Chart title */
 	export let titleData = '';
-	// xAxisUser
-	// yAxisUser
-	// showTootlTip
+
 	let data;
 	let chartContainer;
 

@@ -1,16 +1,36 @@
+<!--
+@component
+Histogram chart
+
+@example
+
+```svelte
+<Histogram
+	dataPath="data/olympians.csv"
+	xData="weight"
+	yData="count"
+	fillData="sex"
+	titleData="Olympic athletes by weight"
+/>
+```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
 
-	export let dataPath = ''; // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+	/** Path to CSV file with data */
+	export let dataPath = '';
+	/** x variable */
 	export let xData = '';
+	/** y variable */
 	export let yData = '';
+	/** Data to add colour dimension */
 	export let fillData = '';
+	/** Chart title */
 	export let titleData = '';
-	// captionData
-	// xAxisUser
-	// yAxisUser
+
 	let data;
 	let chartContainer;
 
