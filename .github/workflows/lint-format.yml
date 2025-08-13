@@ -3,14 +3,13 @@ name: Lint and Format
 on: [push, pull_request]
 
 jobs:
-  prettier:
-    runs-on: ubuntu-latest
+  # prettier:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Check formatting with Prettier
-        run: npm run format-check
-
-  eslint:
+  #   steps:
+  #     - name: Check formatting with Prettier
+  #       run: npm run format-check
+  eslint-with-prettier:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Check formatting with Prettier
+        run: npm run format-check
 
       - name: Run ESLint
         run: npm run lint
