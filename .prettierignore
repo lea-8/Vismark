@@ -7,3 +7,6 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+# 3rd-party plugins
+src/lib/styles/katex
