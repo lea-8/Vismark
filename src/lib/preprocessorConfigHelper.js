@@ -17,6 +17,8 @@ const default_layout_path = join(__dirname, './styles/default_layout.svelte');
 /**
  * A helper to set up mdsvex + Svelte preprocessing.
  * Optionally takes mdsvex options.
+ * @param baseConfig - The existing Svelte configuration for the project
+ * @param mdsvexOptions - User-defined Mdsvex options
  */
 export function vismarkConfig(baseConfig = {}, mdsvexOptions = {}) {
 	return {
@@ -33,6 +35,5 @@ export function vismarkConfig(baseConfig = {}, mdsvexOptions = {}) {
 				...mdsvexOptions
 			})
 		]
-		// ...baseConfig,
 	};
 }
