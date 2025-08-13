@@ -14,15 +14,22 @@
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->
-<div class="cell" style="--hide-cell: {hideCell}">
+<div class="cell {hideCell ? 'hide' : 'show'}">
 	<slot />
 </div>
 
 <style>
-	.cell {
-		border: if(style(--hide-cell: true): 0px solid #ffffff; else: 2px solid #ececec;);
+	.cell.show {
+		border: 2px solid #ececec;
 		border-radius: 5px;
-		background-color: if(style(--hide-cell: true): transparent; else: rgb(248, 248, 248) ;);
+		background-color: rgb(248, 248, 248);
+		padding: 1em;
+	}
+
+	.cell.hide {
+		border: 0px solid transparent;
+		border-radius: 5px;
+		background-color: transparent;
 		padding: 1em;
 	}
 </style>
