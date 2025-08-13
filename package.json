@@ -22,7 +22,8 @@
 		"format-check": "prettier --check ./src",
 		"lint-auto": "eslint ./src --format json --output-file testing/reports/eslint-report.json && prettier --check .",
 		"lint": "eslint ./src --format json --output-file testing/reports/eslint-report.json",
-		"lint-test": "eslint ./README.md"
+		"lint-test": "eslint ./README.md",
+		"jsdoc": "./node_modules/jsdoc/jsdoc.js src/lib/*"
 	},
 	"files": [
 		"dist",
@@ -106,6 +107,7 @@
 		"eslint-formatter-json": "^8.40.0",
 		"eslint-plugin-svelte": "^3.11.0",
 		"globals": "^16.3.0",
+		"jsdoc": "^4.0.4",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"publint": "^0.3.2",

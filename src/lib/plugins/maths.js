@@ -1,14 +1,11 @@
 import katex from 'katex';
 import visit from 'unist-util-visit';
 
-export const correct_hast_tree = () => (tree) => {
-	visit(tree, 'text', (node) => {
-		if (node.value.trim().startsWith('<')) {
-			node.type = 'raw';
-		}
-	});
-};
-
+/**
+ * Helper to render maths correctly. 
+ * Finds and edits "math" code nodes in the markdown AST and changes these to HTML with appropriate options.
+ * @param tree - The Markdown syntax tree to traverse
+ */
 export const katex_blocks = () => (tree) => {
 	visit(tree, 'code', (node) => {
 		if (node.lang === 'math') {
@@ -30,6 +27,18 @@ export const katex_blocks = () => (tree) => {
 
 			node.type = 'raw';
 			node.value = '{@html `' + str + '`}';
+		}
+	});
+};
+
+/**
+ * A helper to fix up the HAST (HTML AST) once katex maths formatting has been applied
+ * @param tree - The HTML syntax tree to traverse
+ */
+export const correct_hast_tree = () => (tree) => {
+	visit(tree, 'text', (node) => {
+		if (node.value.trim().startsWith('<')) {
+			node.type = 'raw';
 		}
 	});
 };
