@@ -19,7 +19,7 @@
 
 <!-- svelte-ignore slot_element_deprecated -->
 <!-- <div class="grid-layout" style="--num-columns: {columns}; --show-grid: {showGrid}"> -->
-<div class="grid-layout {showGrid ? 'show-grid' : 'hide-grid'}">
+<div class="grid-layout {showGrid ? 'show-grid' : 'hide-grid'}" style="--num-columns: {columns};">
 	<slot />
 </div>
 
