@@ -1,3 +1,15 @@
+<!--
+  @component
+	Defines a rectangular section of the page.
+
+	@example
+	```
+	<Widget borderColour="#000000" backgroundColour="#f0f0f0" badgeType="totalUK">
+		Some text and charts here!
+	</Widget>
+	```
+-->
+
 <script>
 	import { onMount } from 'svelte';
 
@@ -5,22 +17,26 @@
 	import badgePerCapita from '../../assets/badges/per_capita.png';
 	import badgeRelative from '../../assets/badges/percentage.png';
 
-	// export let type = ''; // legend, info, chart
+	/** Colour of the border */
 	export let borderColour = '#ececec';
+	/** Colour of the background */
 	export let backgroundColour = '#f8f8f8';
+	/** Type of icon visible */
 	export let badgeType = ''; // totalUK, perCapita, relativeCB
-	let badgeContainer;
 
+	let badgeContainer;
 	$: badgePath = '';
 	const baseRelPath = '../../assets/badges/';
 
 	onMount(() => {
-		// console.log('badgeType:', badgeType);
 		setBadgePath(badgeType);
 	});
 
+	/**
+	 * Set the path to the relevant badge icon file
+	 * @param badgeUser - The name of the badge the user wants
+	 */
 	function setBadgePath(badgeUser) {
-		// console.log('setting badge');
 		if (badgeUser === 'totalUK') {
 			badgePath = badgeTotal;
 		} else if (badgeUser === 'perCapita') {
@@ -28,18 +44,13 @@
 		} else if (badgeUser === 'relativeCB') {
 			badgePath = badgeRelative;
 		} else {
-			// console.log('no badge.');
-
-			// remove that div.
+			// remove the badge div.
 			const element = document.getElementById('badgeDiv');
-			element.remove(); // Removes the div with the 'div-02' id
-			// badgeContainer.$;
+			element.remove(); // Removes the div with the 'badgeDiv' id
 
 			return;
 		}
 	}
-
-	// setBadgePath(badgeType);
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->
@@ -57,6 +68,7 @@
 </div>
 
 <style>
+	/* Styling for the widget */
 	.widget {
 		border: 2px solid var(--border-colour);
 		border-radius: 8px;
@@ -65,6 +77,7 @@
 		margin: 0.5em 0em;
 	}
 
+	/* Styling for the badge icon */
 	.aggregation-icon-container {
 		display: flex;
 		justify-content: flex-end;

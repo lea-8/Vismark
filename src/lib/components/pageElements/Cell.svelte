@@ -1,7 +1,15 @@
+<!--
+  @component
+	Defines a cell within a grid
+
+	@example
+	```
+	<Cell hideCell="{false}"> Some text and charts here! </Cell>
+	```
+-->
+
 <script>
 	export let hideCell = false;
-	// export let rowSpan = '';
-	// export let colSpan = '';
 	// export let sticky = false;
 </script>
 

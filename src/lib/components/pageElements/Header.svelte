@@ -1,3 +1,13 @@
+<!--
+  @component
+	The Atlas navbar designed for the top of the page
+
+	@example
+	```
+	<Header />
+	```
+-->
+
 <script>
 	import { base } from '$app/paths';
 

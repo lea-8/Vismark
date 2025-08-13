@@ -282,11 +282,11 @@ Currently, the `<Header />` and `<Footer />` components are not parameterisable,
 Example usage:
 
 ```html
-<header />
+<Header />
 
 ... Some text and charts ...
 
-<footer />
+<Footer />
 ```
 
 #### Image
@@ -301,7 +301,7 @@ Variables:
 Example usage:
 
 ```html
-<image path="derry_graph.png" scale="20%" />
+<Image path="derry_graph.png" scale="20%" />
 ```
 
 #### Widget

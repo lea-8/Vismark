@@ -1,3 +1,13 @@
+<!--
+  @component
+	The Atlas Footer
+
+	@example
+	```
+	<Footer />
+	```
+-->
+
 <script>
 	import logoDatalab from '../../assets/logos/datalab.png';
 	import logoECCI from '../../assets/logos/ECCI.png';
@@ -87,7 +97,6 @@
 		text-decoration: underline;
 	}
 
-	/*#footer-list a:visited {*/
 	a:visited {
 		color: #6c6c6c;
 	}

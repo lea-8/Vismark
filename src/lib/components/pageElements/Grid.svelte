@@ -1,6 +1,19 @@
+<!--
+  @component
+	Defines a grid with the specified number of columns and no rows
+
+	@example
+	```
+	<Grid columns="{2}" showGrid="{false}">
+		Some content
+	</Grid>
+	```
+-->
+
 <script>
+	/** Number of columns */
 	export let columns = 2;
-	// export let gap = 2;
+	/** Shows the grid outline for debugging purposes */
 	export let showGrid = false;
 </script>
 
