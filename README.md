@@ -5,7 +5,6 @@ A lightweight libary for creating webpages in Svelte projects. Vismark allows fo
 Example pages created with Vismark can be found at [Vismark Examples](https://github.com/lea-8/Vismark-Examples).
 
 ## Installation
-
 For npm installation can be done as follows:
 
 ```bash
@@ -43,7 +42,6 @@ A repository showcasing some example wpbages created with Vismark can be found a
 More information on adding pages in Svelte can be found in the [Svelte routing docs](https://svelte.dev/docs/kit/routing).
 
 ## Markdown syntax
-
 Basic markdown syntax is supported as defined in the [commonmark spec](https://commonmark.org/). They also provide a [cheat sheet](https://commonmark.org/help/) of simple commands for headings, text formatting, links, and lists.
 
 <!-- *To define variables such as arrays, these can be defined at the top of the `.vismd` file within a block separated by three dashes:*
@@ -58,7 +56,6 @@ myArray: [item1, item2, item3, etc]
 Additional support is also available for footnotes and maths formulae formatting.
 
 ### Foonotes
-
 Footnotes allow you to keep the main text free from clutter. You can add them by specifying the footnote number (e.g. `^1`) and surrounding it with square brackets. An example is given below:
 
 ```markdown
@@ -68,7 +65,6 @@ Here's the main text with a footnote[^1].
 ```
 
 ### Maths
-
 In order to render maths formulae nicely, the KaTeX library is used. A list of supported maths symbols and notation can be found in the [KaTeX docs](https://katex.org/docs/supported). The maths must then be placed inside either:
 
 - Single dollar signs (`$`), e.g. `$E = mc^2$` for inline display.
@@ -80,7 +76,7 @@ In order to render maths formulae nicely, the KaTeX library is used. A list of s
   </pre>
 
 - Double dollar signs (`$$`), for centered maths formulae:
-  ```latex
+  ```
   $$
   E = mc^2
   $$
@@ -109,7 +105,6 @@ Chart components will start with a capital letter and be added to the page using
 The variables will allow you to parameterise the chart by defining a title, x and y variables and the path to the dataset used. **All data must be in [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values) format.**
 
 #### Example data
-
 Sample data can be found [here](https://github.com/lea-8/Vismark/tree/main/src/lib/assets/sampleData) if you want to follow along with the examples here.
 
 #### Area Chart
@@ -250,7 +245,6 @@ Example usage:
 Example data that can be used can be found in the [Vismark Examples repo](https://github.com/lea-8/Vismark-Examples/tree/main/static/data). -->
 
 ### Page elements
-
 Page elements are components that define larger parts of a page to add expressivity.
 
 #### Grid layout
@@ -375,5 +369,4 @@ If you are using Visual Studio Code for development, you can add a file associat
 Alternatively, add the file association [through the UI](https://code.visualstudio.com/docs/languages/overview#_add-a-file-extension-to-a-language). Other code editors and IDEs may have similar options.
 
 ### More examples
-
 Feel free to explore some example pages created with Vismark at [Vismark Examples](https://github.com/lea-8/Vismark-Examples).

@@ -1,4 +1,5 @@
 <script>
+<<<<<<< HEAD
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import * as Plot from '@observablehq/plot';
@@ -12,6 +13,21 @@
 	// yAxisUser
 	let data;
 	let chartContainer;
+=======
+  import { onMount } from 'svelte';
+  import * as d3 from 'd3';
+  import * as Plot from '@observablehq/plot';
+
+  export let dataPath = '';  // source: https://observablehq.com/@observablehq/plot-stacked-area-chart
+  export let xData = '';
+  export let yData = '';
+  export let fillData = '';
+  export let titleData = '';
+  // xAxisUser
+  // yAxisUser
+  let data;
+  let chartContainer;
+>>>>>>> main
 
 	async function loadData() {
 		data = await d3.csv(dataPath, d3.autoType);
@@ -19,6 +35,7 @@
 	onMount(async () => {
 		await loadData();
 
+<<<<<<< HEAD
 		plotArea(data, xData, yData, fillData, titleData);
 	});
 
@@ -41,6 +58,30 @@
 			]
 		});
 		chartContainer.appendChild(plotGraph);
+=======
+    plotArea(data, xData, yData, fillData, titleData);
+  });
+
+  function plotArea(dataset, xVar, yVar, fillVar, titleVar) {
+    let plotGraph = Plot.plot({
+      // marginTop: 20,
+      // marginRight: 20,
+      // marginBottom: 30,
+      // marginLeft: 40,
+      color: {legend: true},
+      title: titleVar,
+      y: {
+        grid: true,
+        // label: "[ AXIS LABEL ]"
+      },
+      marks: [
+        Plot.areaY(dataset, {x: xVar, y: yVar, fill: fillVar}),
+        Plot.ruleY([0]),
+        // Plot.frame()
+      ]
+    });
+    chartContainer.appendChild(plotGraph);
+>>>>>>> main
 
 		return () => plotGraph.remove();
 	}

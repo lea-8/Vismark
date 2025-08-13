@@ -1,7 +1,13 @@
 <script>
+<<<<<<< HEAD
 	export let columns = 2;
 	// export let gap = 2;
 	export let showGrid = false;
+=======
+  export let columns = 2;
+  // export let gap = 2;
+  export let showGrid = false;
+>>>>>>> main
 </script>
 
 <!-- svelte-ignore slot_element_deprecated -->
@@ -10,6 +16,7 @@
 </div>
 
 <style>
+<<<<<<< HEAD
 	.grid-layout {
 		display: grid;
 		grid-template-columns: repeat(var(--num-columns), 1fr);
@@ -19,3 +26,14 @@
 		margin: 0.5em 0em;
 	}
 </style>
+=======
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(var(--num-columns), 1fr);
+    gap: 1rem;
+    border: if(style(--show-grid: true): 2px solid #f76707; else: 0px solid #ffffff;); 
+    border-radius: 5px;
+    margin: 0.5em 0em;
+  }
+</style>
+>>>>>>> main
