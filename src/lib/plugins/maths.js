@@ -2,7 +2,7 @@ import katex from 'katex';
 import visit from 'unist-util-visit';
 
 /**
- * Helper to render maths correctly. 
+ * Helper to render maths correctly.
  * Finds and edits "math" code nodes in the markdown AST and changes these to HTML with appropriate options.
  * @param tree - The Markdown syntax tree to traverse
  */

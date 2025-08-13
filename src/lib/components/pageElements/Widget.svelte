@@ -15,12 +15,12 @@
 	const baseRelPath = '../../assets/badges/';
 
 	onMount(() => {
-		console.log('badgeType:', badgeType);
+		// console.log('badgeType:', badgeType);
 		setBadgePath(badgeType);
 	});
 
 	function setBadgePath(badgeUser) {
-		console.log('setting badge');
+		// console.log('setting badge');
 		if (badgeUser === 'totalUK') {
 			badgePath = badgeTotal;
 		} else if (badgeUser === 'perCapita') {
@@ -28,7 +28,7 @@
 		} else if (badgeUser === 'relativeCB') {
 			badgePath = badgeRelative;
 		} else {
-			console.log('no badge.');
+			// console.log('no badge.');
 
 			// remove that div.
 			const element = document.getElementById('badgeDiv');
